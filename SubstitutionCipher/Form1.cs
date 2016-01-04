@@ -12,9 +12,23 @@ namespace SubstitutionCipher
 {
     public partial class Form1 : Form
     {
+        Cipher Cp = new Cipher();
         public Form1()
         {
+            
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int key = -Convert.ToInt32(numericUpDown1.Value);
+            textBox2.Text = Cp.encript(textBox1.Text, key); 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int key = Convert.ToInt32(numericUpDown1.Value);
+            textBox2.Text = Cp.encript(textBox1.Text, key);
         }
     }
 }
